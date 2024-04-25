@@ -1,0 +1,12 @@
+flask
+requests
+pytube
+
+from pytube import YouTube
+
+yt_link = input("Enter YouTube URL: ")
+yt = YouTube(yt_link)
+audio = yt.streams.filter(only_audio=True).first()
+
+print("Enter the destination (leave blank for current directory)")
+destination = str(input(">>")) or '.'
